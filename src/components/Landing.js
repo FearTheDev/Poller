@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import landingStyle from './landing.module.scss';
-import { FaGithub } from 'react-icons/fa';
 import {
   SiRedux,
   SiJest,
@@ -51,7 +50,11 @@ const Landing = () => {
       </div>
 
       <div className={landingStyle.source}>
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/FearTheDev/Poller"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View the source code on{' '}
           <span>
             <SiGithub /> GitHub
