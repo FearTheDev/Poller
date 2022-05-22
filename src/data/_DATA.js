@@ -7,6 +7,15 @@ let users = {
     answers: {},
     questions: [],
   },
+  fullstackog: {
+    id: 'fullstackog',
+    password: 'developer',
+    name: 'Luis Ocasio',
+    avatarURL:
+      'https://images.prismic.io/fullstack-blog/151ba50d-11b8-42a1-be66-e0b7098ec5e2_me.JPG?auto=compress,format&rect=0,287,1284,1284&w=240&h=240',
+    answers: {},
+    questions: [],
+  },
   sarahedo: {
     id: 'sarahedo',
     password: 'password123',

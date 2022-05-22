@@ -1,11 +1,14 @@
 import { FaPoll } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import pollerLogoStyle from './pollerLogo.module.scss';
 
 const PollerLogo = () => {
   return (
-    <span className={pollerLogoStyle.logo}>
-      <FaPoll /> Poller
-    </span>
+    <Link to="/">
+      <span className={pollerLogoStyle.logo}>
+        <FaPoll /> Poller
+      </span>
+    </Link>
   );
 };
 

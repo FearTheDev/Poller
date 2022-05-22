@@ -14,7 +14,7 @@ const Nav = ({ isLoggedIn, user, userAvatar }) => {
         {isLoggedIn ? (
           <>
             <li>
-              <Link to="/">Dashboard</Link>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
             <li>
               <Link to="/leaderboard">Leaderboard</Link>

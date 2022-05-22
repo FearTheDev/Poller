@@ -6,16 +6,34 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Landing from './components/Landing';
+import Leaderboard from './components/Leaderboard';
 import Nav from './components/Nav';
 import ProtectedRoute from './components/ProtectedRoute';
+import { NotFound } from './components/NotFound';
+import Restricted from './components/Restricted';
+import Loader from './components/Loader';
 import appStyle from './app.module.scss';
 
-export const FourOhFour = () => {
+export const PotatoSociety = () => {
   return (
-    <div className="four-oh-four">
-      <h1>404</h1>
-      <p>Page not found</p>
-      <Link to="/">Go back to the homepage</Link>
+    <div className="potato-society">
+      <h1>Potato Society</h1>
+      <p>
+        Welcome to the hidden potato society, not sure how you got here but you
+        are truly special.
+      </p>
+      <p>Seriously.. who chooses to navigate to a potato path?</p>
+      <p>Don't worry your secret is safe with me.</p>
+
+      <div className="potato-society-image">
+        <img
+          src="https://media.giphy.com/media/auJjZlb3h1Ga4/giphy.gif"
+          alt="potato"
+        />
+      </div>
+
+      <p>Thanks for visiting!</p>
+      <Link to="/">Return to the dashboard</Link>
     </div>
   );
 };
@@ -35,6 +53,8 @@ const App = (props) => {
         <Route index element={<Landing />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
+        <Route path="potato" element={<PotatoSociety />} />
+        <Route path="restricted" element={<Restricted />} />
         <Route
           path="dashboard"
           element={
@@ -43,7 +63,17 @@ const App = (props) => {
             </ProtectedRoute>
           }
         />
-        <Route path="*" element={<FourOhFour />} />
+        <Route
+          path="leaderboard"
+          element={
+            <ProtectedRoute>
+              <Leaderboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="loader" element={<Loader />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
