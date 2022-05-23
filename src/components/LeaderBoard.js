@@ -7,8 +7,8 @@ const Leaderboard = (props) => {
   const renderLeaderboard = () => {
     return (
       <div className={leaderboardStyle.container}>
-        <p>Leaderboard</p>
         <div className={leaderboardStyle.champion}>
+          <p className={leaderboardStyle.championTitle}>Top Poller</p>
           <img
             className={leaderboardStyle.championAvatar}
             src={users[0].avatarURL}
@@ -17,28 +17,40 @@ const Leaderboard = (props) => {
           <p className={leaderboardStyle.championName}>{users[0].name}</p>
         </div>
         <ul className={leaderboardStyle.leaderboardList}>
-          {users.map((user) => (
+          <li className={leaderboardStyle.leaderboardItem_header}>
+            <p className={leaderboardStyle.leaderboardItem__rank_header}>
+              Rank
+            </p>
+            <p className={leaderboardStyle.leaderboardItem__user_header}>
+              User
+            </p>
+            <p className={leaderboardStyle.leaderboardItem__questions_header}>
+              Polls Created
+            </p>
+            <p className={leaderboardStyle.leaderboardItem__answers_header}>
+              Polls Voted
+            </p>
+          </li>
+          {users.map((user, index) => (
             <li className={leaderboardStyle.leaderboardItem} key={user.id}>
-              <p className={leaderboardStyle.points}>
-                {user.questions.length + Object.values(user.answers).length}
+              <p className={leaderboardStyle.leaderboardItem__rank}>
+                {index + 1}
               </p>
 
-              <div className={leaderboardStyle.user}>
+              <div className={leaderboardStyle.leaderboardItem__user}>
                 <img
-                  className={leaderboardStyle.userAvatar}
+                  className={leaderboardStyle.leaderboardItem__user__avatar}
                   src={user.avatarURL}
                   alt={`${user.name}'s avatar`}
                 />
                 <p>{user.name}</p>
               </div>
-              <div className={leaderboardStyle.userStats}>
-                <p className={leaderboardStyle.userQuestions}>
-                  {user.questions.length}
-                </p>
-                <p className={leaderboardStyle.userAnswers}>
-                  {Object.keys(user.answers).length}
-                </p>
-              </div>
+              <p className={leaderboardStyle.leaderboardItem__questions}>
+                {user.questions.length}
+              </p>
+              <p className={leaderboardStyle.leaderboardItem__answers}>
+                {Object.keys(user.answers).length}
+              </p>
             </li>
           ))}
         </ul>

@@ -23,17 +23,130 @@
   font-size: 2rem;
   font-weight: 300;
   transition: all 0.3s ease-in-out;
-  padding: 1rem 4rem;
+  padding: 0.5rem 4rem;
   width: 100%;
-  min-height: 100%;
 
+  // Header for leaderboard items
+  .leaderboardItem_header {
+    display: grid;
+    grid-template-columns: 2fr 3fr repeat(2, 1fr) repeat(2, 2fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+    font-size: 2rem;
+
+    .leaderboardItem__rank_header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      font-weight: 600;
+      color: #9c0;
+    }
+
+    .leaderboardItem__user_header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      grid-column: 2 / 4;
+      grid-row: 1 / 2;
+      font-weight: 600;
+      color: #9c0;
+    }
+
+    .leaderboardItem__questions_header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 5 / 6;
+      grid-row: 1 / 2;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #9c0;
+    }
+
+    .leaderboardItem__answers_header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 6 / 7;
+      grid-row: 1 / 2;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #9c0;
+    }
+
+    box-shadow: rgba(115, 115, 115, 0.5) 0px 2px 1px;
+    background-color: #fafafa;
+    font-size: 2.5rem;
+    font-weight: 300;
+    height: auto;
+    border-bottom: 1px solid rgba(15, 15, 15, 0.35);
+    margin-bottom: 1px;
+    width: 100%;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  // Regular item in leaderboard
   .leaderboardItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    text-decoration: none;
-    color: #9c0;
+    display: grid;
+    grid-template-columns: 2fr 3fr repeat(2, 1fr) repeat(2, 2fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+
+    .leaderboardItem__rank {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
+
+    .leaderboardItem__user {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      grid-column: 2 / 4;
+      grid-row: 1 / 2;
+      font-size: 2.5rem;
+      font-weight: 300;
+
+      .leaderboardItem__user__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff;
+        margin-right: 1rem;
+      }
+    }
+
+    .leaderboardItem__questions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 5 / 6;
+      grid-row: 1 / 2;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #9c0;
+    }
+
+    .leaderboardItem__answers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 6 / 7;
+      grid-row: 1 / 2;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #9c0;
+    }
+
     box-shadow: rgba(115, 115, 115, 0.5) 0px 2px 1px;
     background-color: #fafafa;
     font-size: 2.5rem;
@@ -41,22 +154,8 @@
     height: auto;
     width: 100%;
     padding: 1rem;
-    margin: 5px;
+    margin: 0.5rem 0;
     transition: all 0.3s ease-in-out;
-
-    .points {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      text-decoration: none;
-      color: #9c0;
-      font-size: 2.5rem;
-      font-weight: 300;
-      padding: 1rem;
-      margin: 5px;
-      transition: all 0.3s ease-in-out;
-    }
   }
 }
 
@@ -70,7 +169,7 @@
   color: #000;
   font-size: 1.5rem;
   font-weight: 300;
-  width: 200px;
+  width: 100%;
   transition: all 0.3s ease-in-out;
 
   .userAvatar {
@@ -88,45 +187,34 @@
 }
 
 // User stats
-.userStats {
+.userQuestions {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #000;
-  font-size: 1.5rem;
+  color: #9c0;
+  font-size: 2.5rem;
   font-weight: 300;
-  width: 200px;
+  padding: 1rem;
+  margin: 5px;
+  width: 100%;
   transition: all 0.3s ease-in-out;
+}
 
-  .userQuestions {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    text-decoration: none;
-    color: #9c0;
-    font-size: 2.5rem;
-    font-weight: 300;
-    padding: 1rem;
-    margin: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .userAnswers {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    text-decoration: none;
-    color: #9c0;
-    font-size: 2.5rem;
-    font-weight: 300;
-    padding: 1rem;
-    margin: 5px;
-    transition: all 0.3s ease-in-out;
-  }
+.userAnswers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #9c0;
+  font-size: 2.5rem;
+  font-weight: 300;
+  padding: 1rem;
+  margin: 5px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .champion {
@@ -140,6 +228,19 @@
   font-weight: 300;
   width: 200px;
   transition: all 0.3s ease-in-out;
+
+  .championTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #9c0;
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
 
   .championAvatar {
     width: 128px;

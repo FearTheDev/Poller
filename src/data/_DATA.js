@@ -7,6 +7,15 @@ let users = {
     answers: {},
     questions: [],
   },
+  snoflak: {
+    id: 'snoflak',
+    password: 'developer',
+    name: 'Mathias Sletten',
+    avatarURL:
+      'https://media.discordapp.net/attachments/489961804479594526/977978385018028142/unknown.png',
+    answers: {},
+    questions: [],
+  },
   fullstackog: {
     id: 'fullstackog',
     password: 'developer',

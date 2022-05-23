@@ -4,7 +4,10 @@ import PollerLogo from './PollerLogo';
 import { MdOutlineLogout, MdOutlineLogin } from 'react-icons/md';
 import navStyle from './nav.module.scss';
 
-const Nav = ({ isLoggedIn, user, userAvatar }) => {
+const Nav = ({ isLoggedIn, user, userAvatar, loading }) => {
+  if (loading) {
+    return null;
+  }
   return (
     <nav className={navStyle.container}>
       <ul>
@@ -25,6 +28,7 @@ const Nav = ({ isLoggedIn, user, userAvatar }) => {
           </>
         ) : null}
       </ul>
+
       {isLoggedIn ? (
         <div className={navStyle.user}>
           <p>{user}</p>
@@ -44,11 +48,12 @@ const Nav = ({ isLoggedIn, user, userAvatar }) => {
   );
 };
 
-const mapStateToProps = ({ auth, users }) => {
+const mapStateToProps = ({ loading, auth, users }) => {
   return {
     isLoggedIn: auth.isLoggedIn,
     user: auth.user,
     userAvatar: users[auth.user]?.avatarURL,
+    loading,
   };
 };
 
